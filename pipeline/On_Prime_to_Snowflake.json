@@ -111,14 +111,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"schema_name": {
-				"type": "string"
-			},
-			"table_name": {
-				"type": "string"
-			}
-		},
 		"folder": {
 			"name": "AdventureWorks"
 		},
