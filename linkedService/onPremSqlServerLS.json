@@ -1,0 +1,28 @@
+{
+	"name": "onPremSqlServerLS",
+	"properties": {
+		"description": "Used to connect with the On-Premise servers",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "MANI\\SQLEXPRESS",
+			"database": "AdventureWorks2022",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "mani",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVaultLS",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SQL-Server-PWD"
+			}
+		},
+		"connectVia": {
+			"referenceName": "SelfHostIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
