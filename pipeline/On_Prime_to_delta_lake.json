@@ -1,5 +1,5 @@
 {
-	"name": "On_Prime_to_Snowflake",
+	"name": "On_Prime_to_delta_lake",
 	"properties": {
 		"description": "This pipeline is to ingest the data from sql server and then transform the data as per requirement then loaded into snowflake.",
 		"activities": [
@@ -114,68 +114,6 @@
 											"type": "Expression"
 										}
 									}
-								}
-							]
-						},
-						{
-							"name": "Copy data to archive from bronze",
-							"type": "Copy",
-							"dependsOn": [
-								{
-									"activity": "Copy data to bronze from sql server",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "AvroSource",
-									"storeSettings": {
-										"type": "AzureBlobFSReadSettings",
-										"recursive": true,
-										"wildcardFolderPath": "*",
-										"wildcardFileName": "*",
-										"enablePartitionDiscovery": false
-									}
-								},
-								"sink": {
-									"type": "ParquetSink",
-									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
-									},
-									"formatSettings": {
-										"type": "ParquetWriteSettings"
-									}
-								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "SrcAvroDS",
-									"type": "DatasetReference"
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "ParquetSinkDS",
-									"type": "DatasetReference"
 								}
 							]
 						}
