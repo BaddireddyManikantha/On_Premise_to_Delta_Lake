@@ -1,0 +1,37 @@
+{
+	"name": "SinkAvroDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema_name": {
+				"type": "String"
+			},
+			"table_name": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "AdventureWorks"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().table_name",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat(utcNow('yyyy-MM-dd'),'/',dataset().schema_name)",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
+			}
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"name": "SqlServerConfigTableDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onPremSqlServerLS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "AdventureWorks"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SCHEMA_NAME",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ADVENTURE_CONFIG"
+		}
+	}
+}

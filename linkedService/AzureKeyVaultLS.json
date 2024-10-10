@@ -1,0 +1,11 @@
+{
+	"name": "AzureKeyVaultLS",
+	"properties": {
+		"description": "To store all the credits",
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://AdventureWorksSecrets.vault.azure.net/"
+		}
+	}
+}
