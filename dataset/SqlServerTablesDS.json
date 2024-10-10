@@ -1,0 +1,15 @@
+{
+	"name": "SqlServerTablesDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onPremSqlServerLS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "AdventureWorks"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
