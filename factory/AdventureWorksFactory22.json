@@ -1,0 +1,9 @@
+{
+	"name": "AdventureWorksFactory22",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3e05dca6-bd58-4047-91c9-8672f093037d",
+		"tenantId": "7016ddf1-3b4e-49ba-ac65-7f43294f82f5"
+	}
+}
