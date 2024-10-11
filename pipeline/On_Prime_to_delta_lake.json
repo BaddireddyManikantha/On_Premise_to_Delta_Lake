@@ -264,7 +264,7 @@
 					},
 					"url": "https://prod-00.southindia.logic.azure.com:443/workflows/18f90761e6ea4253ab770f61f7ef1a20/triggers/When_a_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=SOqQWWYBX5HZ5Rs9vgrzyE8sXjte4ZEvmfzXuPgU4Tg",
 					"body": {
-						"value": "{\n    \"pipeline\":\"@{pipeline().Pipeline}\",\n    \"ErrorMessage\":\"@{activity('silver to gold').Error.Message}\",\n    \"DataFactoryName\":\"@{pipeline().DataFactory}\",\n    \"RunId\":\"@{pipeline()?.TriggeredByPipelineRunId}\"\n}",
+						"value": "{\n    \"pipeline\":\"@{pipeline().Pipeline}\",\n    \"ErrorMessage\":\"@{activity('silver to gold').Error.Message}\",\n    \"DataFactoryName\":\"@{pipeline().DataFactory}\",\n    \"RunId\":\"@{pipeline().RunId}\"\n}",
 						"type": "Expression"
 					}
 				}
